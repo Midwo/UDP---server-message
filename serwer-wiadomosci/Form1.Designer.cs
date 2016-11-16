@@ -202,6 +202,7 @@
             this.zapiszListęKontaktówToolStripMenuItem.Name = "zapiszListęKontaktówToolStripMenuItem";
             this.zapiszListęKontaktówToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.zapiszListęKontaktówToolStripMenuItem.Text = "Zapisz listę kontaktów";
+            this.zapiszListęKontaktówToolStripMenuItem.Click += new System.EventHandler(this.zapiszListęKontaktówToolStripMenuItem_Click);
             // 
             // koniecToolStripMenuItem
             // 

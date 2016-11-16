@@ -58,6 +58,8 @@ namespace serwer_wiadomosci
             if (listBox1.Items.Count > 0)
                 if (MessageBox.Show("Nastąpi usunięcie listy", "Uwaga", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
                     return;
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "Text File | *.txt";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
@@ -68,6 +70,25 @@ namespace serwer_wiadomosci
                         listBox1.Items.Add(linia);
                 }
             }
+        }
+
+        private void zapiszListęKontaktówToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (listBox1.Items.Count > 0)
+            {
+                saveFileDialog1.Filter = "Text File | *.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        foreach (string linia in listBox1.Items)
+                            sw.WriteLine(linia);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Nie można zapisać pustego pliku", "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
