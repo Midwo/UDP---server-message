@@ -36,5 +36,20 @@ namespace serwer_wiadomosci
                         listBox1.Items.RemoveAt(i);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int indeks = listBox1.SelectedIndex;
+            if (indeks > -1)
+            {
+                string pozycja = listBox1.Items[indeks].ToString();
+                listBox1.Items.RemoveAt(indeks);
+                if (pozycja.StartsWith("(Block) "))
+                    listBox1.Items.Insert(indeks, pozycja.Remove(0,
+                    "(Block) ".Length));
+                else
+                    listBox1.Items.Insert(indeks, "(Block) " + pozycja);
+            }
+        }
     }
 }
