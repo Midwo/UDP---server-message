@@ -90,5 +90,10 @@ namespace serwer_wiadomosci
             else
                 MessageBox.Show("Nie można zapisać pustego pliku", "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void koniecToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

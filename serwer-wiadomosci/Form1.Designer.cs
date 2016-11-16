@@ -209,6 +209,7 @@
             this.koniecToolStripMenuItem.Name = "koniecToolStripMenuItem";
             this.koniecToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.koniecToolStripMenuItem.Text = "Koniec";
+            this.koniecToolStripMenuItem.Click += new System.EventHandler(this.koniecToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
