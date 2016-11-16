@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,23 @@ namespace serwer_wiadomosci
                     "(Block) ".Length));
                 else
                     listBox1.Items.Insert(indeks, "(Block) " + pozycja);
+            }
+        }
+
+        private void otworzListęKontaktówToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count > 0)
+                if (MessageBox.Show("Nastąpi usunięcie listy", "Uwaga", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                    return;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                {
+                    string linia;
+                    listBox1.Items.Clear();
+                    while ((linia = sr.ReadLine()) != null)
+                        listBox1.Items.Add(linia);
+                }
             }
         }
     }

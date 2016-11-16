@@ -42,8 +42,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otworzListęKontaktówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszListęKontaktówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otwórzListęKontaktówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.koniecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -183,24 +183,25 @@
             // plikToolStripMenuItem
             // 
             this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.otworzListęKontaktówToolStripMenuItem,
             this.zapiszListęKontaktówToolStripMenuItem,
-            this.otwórzListęKontaktówToolStripMenuItem,
             this.koniecToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
+            // otworzListęKontaktówToolStripMenuItem
+            // 
+            this.otworzListęKontaktówToolStripMenuItem.Name = "otworzListęKontaktówToolStripMenuItem";
+            this.otworzListęKontaktówToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.otworzListęKontaktówToolStripMenuItem.Text = "Otwórz listę kontaktów";
+            this.otworzListęKontaktówToolStripMenuItem.Click += new System.EventHandler(this.otworzListęKontaktówToolStripMenuItem_Click);
+            // 
             // zapiszListęKontaktówToolStripMenuItem
             // 
             this.zapiszListęKontaktówToolStripMenuItem.Name = "zapiszListęKontaktówToolStripMenuItem";
             this.zapiszListęKontaktówToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.zapiszListęKontaktówToolStripMenuItem.Text = "Otwórz listę kontaktów";
-            // 
-            // otwórzListęKontaktówToolStripMenuItem
-            // 
-            this.otwórzListęKontaktówToolStripMenuItem.Name = "otwórzListęKontaktówToolStripMenuItem";
-            this.otwórzListęKontaktówToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.otwórzListęKontaktówToolStripMenuItem.Text = "Zapisz listę kontaktów";
+            this.zapiszListęKontaktówToolStripMenuItem.Text = "Zapisz listę kontaktów";
             // 
             // koniecToolStripMenuItem
             // 
@@ -265,8 +266,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem otworzListęKontaktówToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zapiszListęKontaktówToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otwórzListęKontaktówToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem koniecToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
