@@ -95,5 +95,13 @@ namespace serwer_wiadomosci
         {
             Close();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Czy na pewno zamknąć?", "Zamykanie - inforamcja", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
+                e.Cancel = true;
+            else
+                e.Cancel = false;
+        }
     }
 }
