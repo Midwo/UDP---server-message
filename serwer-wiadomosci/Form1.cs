@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -102,6 +103,26 @@ namespace serwer_wiadomosci
                 e.Cancel = true;
             else
                 e.Cancel = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Byte[] bufor = Encoding.ASCII.GetBytes(textBox1.Text);
+            foreach (string host in listBox1.Items)
+            {
+                try
+                {
+                    if (host.StartsWith("(Zablokowany) ") == false)
+                        using (UdpClient klient = new UdpClient(host, (int)numericUpDown1.Value))
+                        {
+                            klient.Send(bufor, bufor.Length);
+                        }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Brak połączenia " + ex.Message, "Błąd");
+                }
+            }
         }
     }
 }
